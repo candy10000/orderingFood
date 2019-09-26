@@ -1,0 +1,92 @@
+.top_nav{
+  display: flex;
+  flex-direction: row
+}
+
+.top_nav .nav-name{
+   width: 33.3%;
+   text-align: center;
+   color: #6c6c6c;
+}
+
+.top_nav .nav-hover text{
+  display: line-block;
+  border-bottom: 2px solid #2395ff;
+  padding-bottom: 22rpx;
+  font-weight: bold
+}
+
+.top_storeMsg{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 628rpx;
+  background-repeat: repeat-x;
+  background-image: url('http://127.0.0.1:63068/__pageframe__/pages/icon/bcg.gif')
+}
+
+.top_storeMsg image{
+   padding-top: 86rpx;
+   border-radius: 12rpx;
+   width: 176rpx;
+   height: 172rpx;
+}
+
+.top_storeMsg #store_title{
+      color: black;
+      font-size: 44rpx;
+      font-weight: bold;
+      margin-top: 30rpx;
+}
+.top_storeMsg #delivery_msg{
+      color: #9a9a9a;
+      font-size: 24rpx;
+      margin-top: 10rpx;
+}
+.top_storeMsg #vip{
+   display: flex;
+   align-content: center;
+   align-items: center;
+  font-size: 30rpx;
+  color:#845215;
+  width: 340rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+  background-image: url('http://127.0.0.1:63068/__pageframe__/pages/icon/vipFavourable.png')
+}
+.top_storeMsg #vip #price{
+  margin-left: 56rpx; 
+  margin-right: 35rpx;
+}
+.top_storeMsg #vip #vip_bottom{
+  margin-left: 10px;
+}
+
+.top_storeMsg #store_favourable{
+  margin-top: 20rpx;
+}
+
+.top_storeMsg #store_favourable text{
+    border: 2rpx solid #fbe0df;
+  border-radius: 6rpx;
+  margin-right: 20rpx; 
+  color: #e85953; 
+}
+.fontcss{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  margin-bottom: 5rpx;
+}
+
+/* 商家点餐模块 */
+.tap1{
+  height: 700rpx;
+}
+.tap1 image{
+ width: 792rpx;
+ height: 204rpx;
+ margin: 10px auto;
+}
+
+
+

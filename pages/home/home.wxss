@@ -1,1 +1,131 @@
-/* pages/home/home.wxss */
+/* pages/fooder/fooder.wxss */
+.section{
+    font-family: '华文楷体'
+}
+
+.section__title{
+   line-height: 100%;
+   width: 100%;
+   text-align: center;
+   padding: 46rpx 0;
+}
+.section__title text{
+
+  color: black;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+/* filterBar */
+#filterBar ul li{
+    display: inline-block;
+    width: 25%;
+    color: #777777;
+    text-align: center;
+    font-family: '华文楷体'   
+}
+
+.storeInfo{
+  display: flex;
+  /* background-color: rgba(219, 170, 207, 0.267); */
+  margin: 40rpx 0;
+}
+
+.storeInfo #left image{
+  width: 152rpx;
+  height: 144rpx;
+  margin-left: 20rpx;
+  border-radius: 9rpx;
+}
+
+.storeInfo #right{
+  display: flex;
+  width: 70%;
+  margin-left: 30rpx;
+  flex-direction: column;
+}
+.storeInfo #right h1{
+  color: black;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.fontcss{
+  font-size: 24rpx;
+  color: #bbbbbb;
+  margin-bottom: 5rpx;
+}
+
+/* .storeInfo #right #saleInfo span{
+  font-size: 24rpx;
+  color: #bbbbbb;
+}
+
+.storeInfo #right #deliveryInfo text{
+  font-size: 24rpx;
+  color: #bbbbbb;
+} */
+.storeInfo #right #commentInfo text{
+  background-color: #fff4eb;
+  font-size: 26rpx;
+  color: #fe7100; 
+  border-radius: 4rpx;
+} 
+.storeInfo #right #favourableInfo{
+  margin-top: 20rpx;
+} 
+
+
+.storeInfo #right #favourableInfo text{
+  border: 2rpx solid #fbe0df;
+  border-radius: 6rpx;
+  margin-right: 20rpx; 
+  color: #e85953; 
+} 
+
+/*bottom 轮播控件*/
+
+.container{
+
+}
+
+.container .home-swiper {
+  width: 678rpx;
+  height: 382rpx;
+}
+
+.container .home-swiper .slide-image {
+width: 288rpx;
+height: 134rpx;
+}
+
+.container .home-swiper .reserve{
+position: absolute;
+ bottom: 54rpx;
+  left: 276rpx;
+width: 128rpx;
+height: 44rpx;
+color: rgba(16, 16, 16, 1);
+font-size: 32rpx;
+text-align: left;
+font-family: PingFangSC-regular;
+}
+
+/*bottom 轮播控件*/
+
+
+
+.container .home-swiper {
+  width: 678rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}
+
+.container .home-swiper .slide-image {
+   width: 100%;
+   height: 100%;
+}
+
+
+
+

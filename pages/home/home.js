@@ -1,10 +1,18 @@
-// pages/home/home.js
+// pages/fooder/fooder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    winWidth: 0,
+    winHeight: 0,
+    stores: [1,2,3,5,6,7,8,9], 
+    
+    //bottom轮播图配置
+    autoplay: true,
+    interval: 3000,
+    duration: 1200
 
   },
 
@@ -13,54 +21,60 @@ Page({
    */
   onLoad: function (options) {
 
+    var that =this;
+    //  请求系统数据
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          winHeight: res.windowHeight,
+          winWidth: res.windowWidth
+        })
+      }
+    });
+
+    // bottom轮播图片
+    var data = {
+      "datas": [
+        {
+          "id": 1,
+          "imgurl": "../icon/taocan.gif"
+        },
+        {
+          "id": 2,
+          "imgurl": "../icon/taocan.gif"
+        },
+        {
+          "id": 3,
+          "imgurl": "../icon/taocan.gif"
+        },
+        {
+          "id": 4,
+          "imgurl": "../icon/taocan.gif"
+        }
+      ]
+    };
+    that.setData({
+      lunboData: data.datas
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  /* 作品集展示加载函数 */
+  lower() {
+    let len = this.data.stores.length,
+      lastItem = this.data.stores[len - 1];
+    for (let i = 0; i < len; i++) {
+      this.data.stores.push(lastItem + i + 1)
+      this.setData({
+        'stores': this.data.stores
+      })
+    }
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  choose: function(){
+    wx.navigateTo({
+      url: '../storeDetail/storeDetail',
+    })
   }
+
 })

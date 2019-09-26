@@ -1,0 +1,54 @@
+<!-- 导航 -->
+<view class="wrapper" style="width:{{winWidth}}px">
+
+  <view class="top_storeMsg">
+    <view>
+      <image src="../icon/store.jpg"> </image>
+    </view>
+
+    <view id="store_title">
+      <text>爽爽小吃(石锅拌饭)</text>
+    </view>
+    <view id="delivery_msg">
+      <text>评价4.4月售1622单 蜂鸟专送约30分钟</text> 
+    </view>
+
+    <view id="vip">
+      <text id="price">￥8</text>
+      <icon class="iconfont icon-huangguan1" style="font-size:32rpx;color:#845215"></icon>
+      <text>无门槛</text>
+      <text id="vip_bottom">领取</text>
+    </view>
+
+    <view id="store_favourable" class="fontcss">
+      <!-- <view>45减34</view> <view>90减69</view> <view>135减101</view> -->
+      <text>45减34</text>
+      <text>90减69</text>
+      <text>135减101</text>
+    </view>
+
+  </view>
+  <view class='top_nav'>
+    <view class="nav-name {{item.typeId == currentId ? 'nav-hover':''}}" wx:for="{{section}}" wx:key="id" id='{{item.typeId}}' catchtap='handleTap'>
+      <text> {{item.name}} </text>
+    </view>
+  </view>
+
+  <!-- 点餐-->
+  <view class="tap1" hidden='{{currentId!=1}}'>
+   <view id="img"> <image src="../icon/taocan.gif"></image> </view>
+  
+
+  </view>
+
+  <!-- 评价-->
+  <view class="tap2" hidden='{{currentId!=2}}'>
+    评价
+  </view>
+
+  <!-- 商家 -->
+  <view class="tap3" hidden='{{currentId!=3}}'>
+    商家
+  </view>
+
+</view>

@@ -158,6 +158,10 @@ Page({
     var otherInfo = this.data.otherInfo;
     var sessionId = wx.getStorageSync('sessionId');
     console.log("successSubmit");
+
+    wx.switchTab({
+      url: '../home/home',
+    })
     // wx.request({
     //   //url: `${config.api + '/addinfo.html'}`,
     //   data: {
@@ -189,6 +193,8 @@ Page({
     //     console.log(res)
     //   }
     // })
+
+
   },
 
 

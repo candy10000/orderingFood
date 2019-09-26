@@ -1,1 +1,68 @@
-<!--pages/home/home.wxml-->
+<view class="section">
+      <view class="container">
+      <!--轮播图-->
+      <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for-items="{{lunboData}}">
+          <swiper-item>
+            <image src="{{item.imgurl}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  <view class="section__title">
+    <!-- <icon class="iconfont icon-renzhengshangjia" style="font-size:30px;"></icon> -->
+    <text >推荐商家</text>
+  </view>
+
+  <view id="filterBar">
+    <ul>
+      <li> 综合排序
+        <icon class="iconfont icon-icon_sanjiaoxing"></icon>        
+
+      </li>
+      <li>距离最近</li>
+      <li>品质联盟</li>
+      <li>筛选
+        <icon class="iconfont icon-iconfontzhizuobiaozhun023125"></icon>
+      </li>
+    </ul>
+  </view>
+
+  <scroll-view scroll-y='true' style="height:{{winHeight}}px" bindscrolltolower='lower'>
+    <ul>
+      <view wx:for="{{stores}}" data-id="{{index}}" wx:key="{{index}}">
+        <block>
+          <li  bindtap="choose">
+            <view class="storeInfo">
+              <view id="left">
+                <image src='../icon/cat.jpg'></image>
+              </view>
+              <view id="right">
+                <h1>千味黄焖鸡鱼粉</h1>
+
+                <view id="saleInfo" class="fontcss">
+                  <icon class="iconfont icon-xingxing" style="color:red; "></icon>
+                  <span style="color:red">3.8</span>
+                  <span style="margin-left:10rpx;">月售4999</span>
+                </view>
+                <view id="deliveryInfo" class="fontcss" style="width:100%">
+                  <text decode="{{true}}" space="{{true}}">起送￥0 &nbsp;&nbsp;配送￥3</text>
+                  <text style="margin-left:180rpx;" decode="{{true}}" space="{{true}}">45分钟&nbsp;&nbsp;3.1km</text>
+                </view>
+                <view id="commentInfo">
+                  <text> “鱼粉量很多，好吃”</text>
+                </view>
+                <view class="fontcss" id="favourableInfo">
+                  <!-- <view>45减34</view> <view>90减69</view> <view>135减101</view> -->
+                  <text>45减34</text>
+                  <text>90减69</text>
+                  <text>135减101</text>
+                </view>
+              </view>
+            </view>
+          </li>
+        </block>
+      </view>
+    </ul>
+  </scroll-view>
+</view>
