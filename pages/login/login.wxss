@@ -1,0 +1,111 @@
+/* pages/login/login.wxss */
+
+
+/*表单内容*/
+
+.login-from { 
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx; 
+  height:100%; 
+  width: 80%;
+  align-items:center;
+  margin: 100rpx auto;
+
+} 
+
+
+
+/*输入框*/  
+
+.inputItem {
+  width: 100%;
+  margin-bottom: 20rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border: 2rpx #ddd solid;
+  border-radius: 5rpx;
+  height: 80rpx;
+} 
+
+.inputText { 
+ flex: block; 
+ padding-left:1em;
+ color: #9c9c9c; 
+ font-size: 36rpx;
+ line-height: 80rpx;
+ height: 80rpx;
+} 
+
+#phone{
+  display: flex;
+  flex-direction: row;
+}
+
+/*按钮*/
+.getCodeBtn::after{
+ border:0px;
+}
+.getCodeBtn{
+ background-color:transparent;
+ font-size: 30rpx;
+ line-height: 80rpx;
+ height: 80rpx;
+ margin-right:1em;
+ color: rgb(62,167,243);
+}
+
+
+.loginBtn { 
+  color: #fff;
+  background: rgb(62,167,243);
+  font-size: 36rpx;
+  margin-top: 60rpx;
+}
+.btnItem{
+  width: 100%;
+}
+
+
+.tip{
+  font-size: 30rpx;
+  color: rgb(155,155,155);
+}
+
+.protocol{
+  font-size: 30rpx;
+  color: rgb(62,167,243);
+}
+
+
+
+/* 协议弹出框 */
+.isProtocolShow{
+    display: block;
+}
+.isProtocolHide{
+    display: none;
+}
+.protocolView{
+  height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color:rgba(0, 0, 0, .5);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.protocolContent{
+    padding: 20rpx 20rpx;
+    width: 80%;
+    background: #fff;
+    margin: 40% auto;
+    border-radius: 5rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    font-size: 30rpx;
+}
