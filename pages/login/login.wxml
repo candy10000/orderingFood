@@ -1,0 +1,36 @@
+<!--pages/login/login.wxml-->
+
+<view class="container">
+  <view class="login-from">
+    <!--手机号-->
+
+    <view class="inputItem" id="phone">
+      <input class="inputText" placeholder="手机号" type="number" maxlength="11" bindinput="phoneInput" placeholder-style="color:#e2e2e2;" />
+      <button wx:if="{{send}}" class="getCodeBtn" bindtap="getCode">获取验证码</button>
+      <button wx:if="{{alreadySend}}" class="getCodeBtn" bindtap="getCode">{{second+"s"}}</button>
+    </view>
+    <!--密码-->
+
+    <view class="inputItem">
+      <input class="inputText"  placeholder="验证码" type="number"  bindinput="codeInput" placeholder-style="color:#e2e2e2;" />
+    </view>
+
+    <view>
+      <text class="tip">温馨提示:未注册的手机号，登录时将自动注册，且代表您已同意！</text>
+      <text class="protocol" bindtap="showProtocol">用户服务协议</text>
+    </view>
+    <!--按钮-->
+
+    <view class="btnItem">
+      <button class="loginBtn"  bindtap="loginSubmit">登录</button>
+    </view>
+  </view>
+
+</view>
+
+<view class="protocolView {{isProtocolTrue?'isProtocolShow':'isProtocolHide'}}">
+ <view class='protocolContent'>
+  <text>{{protocol}}</text>
+  <text bindtap="hideProtocol">×</text>
+  </view>
+</view>
