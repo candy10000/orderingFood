@@ -41,14 +41,14 @@
   border-radius: 10rpx;
 }
 
-.hongbao {
-  width: 50rpx;
-  height: 50rpx;
+.icon-icon-test {
+  font-size: 50rpx;
+  color: #ffd1c4;
 }
 
-.qianbao {
-  width: 50rpx;
-  height: 40rpx;
+.icon-qianbao {
+  font-size: 50rpx;
+  color: #9dd9f2;
 }
 
 .middle_left, .middle_right {
@@ -65,6 +65,7 @@
 .middle_text_top {
   color: #212121;
   font-size: 32rpx;
+  align-self: center;
 }
 
 .middle_text_bottom {
@@ -91,14 +92,14 @@
   padding: 24rpx 24rpx 24rpx 0;
 }
 
-.bottom_line .left {
+.bottom_line .left_icon {
+  font-size: 50rpx;
+  color: #50c1ff;
   margin-left: 48rpx;
-  width: 50rpx;
-  height: 50rpx;
   align-self: center;
 }
 
-.bottom_line .right {
-  width: 40rpx;
-  height: 40rpx;
+.bottom_line .right_icon {
+  font-size: 50rpx;
+  color: #C4C4C4;
 }

@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1437455 */
+  src: url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.eot');
+  src: url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1437455_3z13gb2zgrr.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiantouarrow487:before {
+  content: "\e6ab";
+}
+
+.icon-icon-test:before {
+  content: "\e619";
+}
+
+.icon-kefu:before {
+  content: "\e606";
+}
+
+.icon-qianbao:before {
+  content: "\e63d";
+}
+
+.icon-shoucang:before {
+  content: "\e66f";
+}
+
+.icon-gongwenbao:before {
+  content: "\e61d";
+}
+
+.icon-liwulipinjiangpin-xianxing:before {
+  content: "\e7b6";
+}
+
+.icon-qiapian:before {
+  content: "\e65e";
+}
+
+.icon-shezhi:before {
+  content: "\e691";
+}
+

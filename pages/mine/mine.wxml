@@ -19,58 +19,58 @@
         <view class="middle_text_top">红包</view>
         <view class="middle_text_bottom">个未使用</view>
       </view>
-      <image class="hongbao" src="../icon/hongbao.png"></image>
+      <text class="iconfont icon-icon-test"></text>
     </view>
     <view class="middle_right">
       <view>
         <view class="middle_text_top">钱包</view>
         <view class="middle_text_bottom">金币、借钱、福利</view>
       </view>
-      <image class="qianbao" src="../icon/qianbao.png"></image>
+      <text class="iconfont icon-qianbao"></text>
     </view>
   </view>
   <view class="middle_shadow"></view>
   <view class="bottom">
     <view class="bottom_line">
-      <image class="left" src="../icon/shoucang.png"></image>
+      <text class="iconfont icon-shoucang left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>我的收藏</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">我的收藏</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
     <view class="bottom_line">
-      <image class="left" src="../icon/kefu.png"></image>
+      <text class="iconfont icon-kefu left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>我的客服</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">我的客服</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
     <view class="bottom_line">
-      <image class="left" src="../icon/jiangpin.png"></image>
+      <text class="iconfont icon-liwulipinjiangpin-xianxing left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>推荐有奖</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">推荐有奖</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
     <view class="bottom_line">
-      <image class="left" src="../icon/hezuo.png"></image>
+      <text class="iconfont icon-gongwenbao left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>商务合作</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">商务合作</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
     <view class="bottom_line">
-      <image class="left" src="../icon/banka.png"></image>
+      <text class="iconfont icon-qiapian left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>办卡有礼</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">办卡有礼</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
     <view class="bottom_line">
-      <image class="left" src="../icon/shezhi.png"></image>
+      <text class="iconfont icon-shezhi left_icon"></text>
       <view class="bottom_right">
-        <view middle_text_top>设置</view>
-        <image class="right" src="../icon/jiantou.png"></image>
+        <view class="middle_text_top">设置</view>
+        <text class="iconfont icon-jiantouarrow487 right_icon"></text>
       </view>
     </view>
   </view>
