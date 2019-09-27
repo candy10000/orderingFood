@@ -1,2 +1,30 @@
 <!--pages/discovery/discovery.wxml-->
-<text>pages/discovery/discovery.wxml</text>
+<view class="discovery">
+  <view class="top">
+    {{city}}
+    <text class="iconfont icon-jiantouarrow483"></text>
+    <text class="iconfont icon-vertical_line"></text>
+    <text class="iconfont icon-fangdajing"></text>
+    <input></input>
+  </view>
+  <view class="middle">
+    <view class="text_gray">当前定位</view>
+    <view class="middle_bottom">
+      <view class="fontweight">
+        <text class="iconfont icon-dingwei3"></text> {{address}}
+      </view>
+      <view class="text_blue" bindtap="onChangeAddress">重新定位</view>
+    </view>
+  </view>
+  <view class="bgr"></view>
+  <view class="bottom">
+    <view class="bottom_top text_gray">收货地址</view>
+    <block wx:key="{{index}}" wx:for="{{list}}">
+      <view class="bottom_bottom text_blue">
+        <view class="fontweight">{{item.address}}</view>
+        <view class="text_gray">{{item.name}} {{item.telephone}}</view>
+      </view>
+    </block>
+    <view class="bottom_bottom text_blue" bindtap="addAddress">新增地址</view>
+  </view>
+</view>

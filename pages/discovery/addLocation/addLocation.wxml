@@ -1,0 +1,16 @@
+<!--pages/discovery/addLocation/addLocation.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="addLocation">
+    <view>联系人
+      <input value="{{name}}" name="name" placeholder="姓名"></input>
+    </view>
+    <view>电话
+      <input value="{{telephone}} " name="telephone" placeholder="手机号码" ></input>
+    </view>
+    <view>地址
+      <input value="{{address}} " name="address" placeholder="请选择收货地址" bindtap="onChangeAddress"></input>
+    </view>
+
+    <button form-type="submit">保存</button>
+  </view>
+</form>

@@ -1,0 +1,25 @@
+/* pages/discovery/addLocation/addLocation.wxss */
+
+.addLocation view {
+  display: flex;
+  flex-direction: row;
+  margin-left: 24rpx;
+  padding: 24rpx;
+  /* justify-content: center; */
+  border-bottom: 1px solid #ccc;
+  color: #525252;
+  font-weight: bold;
+}
+
+.addLocation view input {
+   font-weight: normal;
+  margin-left: 24rpx;
+}
+
+button {
+  border: none;
+  background-color: #51CC66;
+  color: white;
+  border-radius: 10rpx;
+  margin: 48rpx 24rpx;
+}

@@ -1,7 +1,7 @@
 // pages/login/login.js
 
 //const config = require('../../config/config.default.js')
-var app = getApp()
+const app = getApp()
 var API = require('../../utils/api.js')
 
 Page({
@@ -14,8 +14,49 @@ Page({
     phoneNum: '',
     code: '',
     otherInfo: '',
-    protocol: "提示条款：需要特别说明的是，本政策不适用于其他第三方向您提供的服务，也不适用于饿了么中另行独立设置隐私权政策的产品或服务。例如饿了么上的卖家依托饿了么向您提供服务时，您向卖家提供的个人信息不适用本政策。"
+    protocol: "提示条款：需要特别说明的是，本政策不适用于其他第三方向您提供的服务，也不适用于饿了么中另行独立设置隐私权政策的产品或服务。例如饿了么上的卖家依托饿了么向您提供服务时，您向卖家提供的个人信息不适用本政策。",
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+  onLoad: function () {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: true
+      })
+    } else if (this.data.canIUse) {
+      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+      // 所以此处加入 callback 以防止这种情况
+      app.userInfoReadyCallback = res => {
+        this.setData({
+          userInfo: res.userInfo,
+          hasUserInfo: true
+        })
+      }
+    } else {
+      // 在没有 open-type=getUserInfo 版本的兼容处理
+      wx.getUserInfo({
+        success: res => {
+          app.globalData.userInfo = res.userInfo
+          this.setData({
+            userInfo: res.userInfo,
+            hasUserInfo: true
+          })
+        }
+      })
+    }
+  },
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  
   onReady: function () {
     // wx.request({
     //   url: `${config.api + '/getSessionId.html'}`,
@@ -210,20 +251,5 @@ Page({
     this.setData({
       isProtocolTrue: false
     })
-  },
-  ////mock
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    // 使用 Mock
-    API.ajax('', function (res) {
-      //这里既可以获取模拟的res
-      console.log(res)
-      that.setData({
-        list: res.data
-      })
-    });
-
-    console.log(this.data.list)
   }
 })

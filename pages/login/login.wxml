@@ -12,7 +12,7 @@
     <!--密码-->
 
     <view class="inputItem">
-      <input class="inputText"  placeholder="验证码" type="number"  bindinput="codeInput" placeholder-style="color:#e2e2e2;" />
+      <input class="inputText" placeholder="验证码" type="number" bindinput="codeInput" placeholder-style="color:#e2e2e2;" />
     </view>
 
     <view>
@@ -22,16 +22,16 @@
     <!--按钮-->
 
     <view class="btnItem">
-      <button class="loginBtn"  bindtap="loginSubmit">登录</button>
+      <button class="loginBtn" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+      <button wx:else class="loginBtn" bindtap="loginSubmit">登录</button>
     </view>
   </view>
 
 </view>
 
 <view class="protocolView {{isProtocolTrue?'isProtocolShow':'isProtocolHide'}}">
- <view class='protocolContent'>
-  <text>{{protocol}}</text>
-  <text bindtap="hideProtocol">×</text>
+  <view class='protocolContent'>
+    <text>{{protocol}}</text>
+    <text bindtap="hideProtocol">×</text>
   </view>
 </view>
-
