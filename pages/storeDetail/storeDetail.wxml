@@ -1,5 +1,5 @@
 <!-- 导航 -->
-<view class="wrapper" style="width:{{winWidth}}px">
+<view class="wrap" style="width:{{winWidth}}px">
 
   <view class="top_storeMsg">
     <view>
@@ -10,15 +10,15 @@
       <text>爽爽小吃(石锅拌饭)</text>
     </view>
     <view id="delivery_msg">
-      <text>评价4.4月售1622单 蜂鸟专送约30分钟</text> 
+      <text>评价4.4月售1622单 蜂鸟专送约30分钟</text>
     </view>
 
-    <view id="vip">
+    <!-- <view id="vip">
       <text id="price">￥8</text>
       <icon class="iconfont icon-huangguan1" style="font-size:32rpx;color:#845215"></icon>
       <text>无门槛</text>
       <text id="vip_bottom">领取</text>
-    </view>
+    </view> -->
 
     <view id="store_favourable" class="fontcss">
       <!-- <view>45减34</view> <view>90减69</view> <view>135减101</view> -->
@@ -36,19 +36,122 @@
 
   <!-- 点餐-->
   <view class="tap1" hidden='{{currentId!=1}}'>
-   <view id="img"> <image src="../icon/taocan.gif"></image> </view>
-  
-
+    <view id="img">
+      <image src="../icon/taocan.gif"></image>
+    </view>
   </view>
 
   <!-- 评价-->
   <view class="tap2" hidden='{{currentId!=2}}'>
-    评价
+    <view class="wrapper" style="width:{{winWidth}}px">
+      <view id="appraise" class="row">
+        <view id="left" class="row">
+        
+          <view id="_left" >
+           4.7
+          </view>
+          <view id="_right">
+            <text>商家评分</text>
+            <view id="stars_wrapper">
+              <view class="stars" style="width: {{praisestars}};">
+                <view>
+                  <image src="../icon/star.png"></image>
+                  <image src="../icon/star.png"></image>
+                  <image src="../icon/star.png"></image>
+                  <image src="../icon/star.png"></image>
+                  <image src="../icon/star.png"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+        <view id="right" class="row">
+         <view>
+         <text >味道\n </text> 
+         <span> 4.7</span>
+         </view>
+          <view>
+          <text>包装 \n</text> 
+           <span> 4.7</span>
+         </view>
+          <view style="border-left: 2rpx solid #dddddd;padding-left: 20rpx;">
+          <text>配送\n</text> <br/>
+           <span>4.8 </span>
+        </view>
+        
+        </view>
+      </view>
+
+
+
+      <view id="filter">
+           <text class="filter_ {{ filterflag[0] ? 'nav-hover':''}}" bindtap="changefilterflag" data-id="0"> 全部</text>
+            <text class="filter_ {{ filterflag[1] ? 'nav-hover':''}}" bindtap="changefilterflag" data-id="1">好评</text>
+             <text class="filter_ {{ filterflag[2] ? 'nav-hover':''}}" bindtap="changefilterflag" data-id="2">差评</text>
+      </view>
+
+      <view id="user_opinion">
+
+        <scroll-view scroll-y='true' scroll-top="{{scrollTop}}" bindscrolltolower='lower'  style="height:{{winHeight}}px" >
+    <ul>
+      <view wx:for="{{users}}" data-id="{{index}}" wx:key="{{index}}">
+        <block >
+          <li bindtap="choose">
+            <view class="userInfo">
+              <view id="left">
+                <image src='../icon/cat.jpg'></image>
+                <view >
+                    188***0234
+                </view>
+              </view>
+
+              <view id="right">
+                关注微信公众号:最大外卖包，可每天领取饿了么5-15元红包
+券
+点完餐还未评价的盆友，可以联系公众号客服，赚点餐红包奖
+励
+
+              </view>
+            </view>
+          </li>
+        </block>
+      </view>
+    </ul>
+  </scroll-view>
+      </view>
+
+    </view>
   </view>
 
   <!-- 商家 -->
   <view class="tap3" hidden='{{currentId!=3}}'>
-    商家
+      <view id="wrapper">
+      <view id="store_img"> 
+      <text>商家信息 \n</text>
+       <image src="../icon/store.jpg"></image>
+        <image src="../icon/store.jpg"></image>
+      </view>
+      <view id="store_info"> 
+      <view>  商家名称</view>
+       <view> 商家品类</view>
+        <view>商家地址</view>
+         <view>商家电话</view>
+          <view>营业时间</view>
+      </view>
+      
+      <view id="server">
+     <text> 商家服务</text> 
+     <text id="server_info" decode="{{true}}" space="{{true}}">  
+赔&nbsp;商家原因导致订单取消，赔付代金券  \n
+保&nbsp;该商户食品安全已由国泰产险承担，食品安全有保障 \n
+票&nbsp;该商家支持开发票，请在下单时填写好发票抬头 \n
+</text>
+
+      </view>
+      
+      </view>
   </view>
 
 </view>

@@ -8,6 +8,8 @@ Page({
     winWidth: 0,
     winHeight: 0,
     stores: [1,2,3,5,6,7,8,9], 
+    scrollTop:5,//设置触发条件的距离
+    // timer: null,//保存定时器
     
     //bottom轮播图配置
     autoplay: true,
@@ -58,7 +60,7 @@ Page({
     })
   },
 
-  /* 作品集展示加载函数 */
+  /* 商家展示 */
   lower() {
     let len = this.data.stores.length,
       lastItem = this.data.stores[len - 1];
@@ -68,13 +70,43 @@ Page({
         'stores': this.data.stores
       })
     }
-
+  },
+  onPullDownRefresh:function(){
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    setTimeout(function () {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   },
 
   choose: function(){
     wx.navigateTo({
       url: '../storeDetail/storeDetail',
     })
-  }
+  },
+
+  // refresh(){
+  //   wx.startPullDownRefresh({
+  //     success(msg){
+  //     console.log('开始下拉刷新',msg)
+  //     },
+  //     complete(){
+  //       console.log('下拉刷新完毕')
+  //     }
+  //   })
+  // },
+
+  // pullFresh:function(e){
+  //   clearTimeout(this.timer)
+  //   wx.showNavigationBarLoading()
+  //   if (e.detail.scrollTop < this.data.scrollTop) {
+  //     this.timer = setTimeout(() => {
+  //       this.refresh()
+  //       wx.hideNavigationBarLoading()
+  //       wx.stopPullDownRefresh()
+  //     }, 350)
+  //   }
+  // }
 
 })

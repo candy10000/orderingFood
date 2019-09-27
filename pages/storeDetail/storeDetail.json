@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+      "usingComponents": {},
+      "navigationBarBackgroundColor": "#34cee5",
+      "navigationBarTitleText": "商家详细信息",
+      "navigationBarTextStyle": "black"
 }
