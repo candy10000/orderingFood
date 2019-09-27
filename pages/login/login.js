@@ -1,6 +1,8 @@
 // pages/login/login.js
 
 //const config = require('../../config/config.default.js')
+var app = getApp()
+var API = require('../../utils/api.js')
 
 Page({
   data: {
@@ -208,5 +210,20 @@ Page({
     this.setData({
       isProtocolTrue: false
     })
+  },
+  ////mock
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    // 使用 Mock
+    API.ajax('', function (res) {
+      //这里既可以获取模拟的res
+      console.log(res)
+      that.setData({
+        list: res.data
+      })
+    });
+
+    console.log(this.data.list)
   }
 })

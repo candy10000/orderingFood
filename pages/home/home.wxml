@@ -1,23 +1,29 @@
 <view class="section">
-      <view class="container">
-      <!--轮播图-->
-      <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for-items="{{lunboData}}">
-          <swiper-item>
-            <image src="{{item.imgurl}}" class="slide-image" />
-          </swiper-item>
-        </block>
-      </swiper>
+  <view class="container">
+    <view class="searchItem" >
+      <input class="searchText" placeholder="搜索"  bindinput="search" placeholder-style="color:#e2e2e2;" />
+      <button class="searchBtn"  bindtap="search">
+      <image src="../icon/search.png" class="searchIcon"></image>
+      </button>
     </view>
+    <!--轮播图-->
+    <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for-items="{{lunboData}}">
+        <swiper-item>
+          <image src="{{'../../image/banner/'+item.id+'.jpg'}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
   <view class="section__title">
     <!-- <icon class="iconfont icon-renzhengshangjia" style="font-size:30px;"></icon> -->
-    <text >推荐商家</text>
+    <text>推荐商家</text>
   </view>
 
   <view id="filterBar">
     <ul>
       <li> 综合排序
-        <icon class="iconfont icon-icon_sanjiaoxing"></icon>        
+        <icon class="iconfont icon-icon_sanjiaoxing"></icon>
 
       </li>
       <li>距离最近</li>
@@ -32,25 +38,25 @@
     <ul>
       <view wx:for="{{stores}}" data-id="{{index}}" wx:key="{{index}}">
         <block>
-          <li  bindtap="choose">
+          <li bindtap="choose">
             <view class="storeInfo">
               <view id="left">
-                <image src='../icon/cat.jpg'></image>
+                <image src='{{item.storeInfo.image}}'></image>
               </view>
               <view id="right">
-                <h1>千味黄焖鸡鱼粉</h1>
+                <h1>{{item.storeInfo.name}}</h1>
 
                 <view id="saleInfo" class="fontcss">
                   <icon class="iconfont icon-xingxing" style="color:red; "></icon>
-                  <span style="color:red">3.8</span>
-                  <span style="margin-left:10rpx;">月售4999</span>
+                  <span style="color:red">{{item.storeInfo.grade}}</span>
+                  <span style="margin-left:10rpx;">月售{{item.storeInfo.monthSell}}</span>
                 </view>
                 <view id="deliveryInfo" class="fontcss" style="width:100%">
                   <text decode="{{true}}" space="{{true}}">起送￥0 &nbsp;&nbsp;配送￥3</text>
-                  <text style="margin-left:180rpx;" decode="{{true}}" space="{{true}}">45分钟&nbsp;&nbsp;3.1km</text>
+                  <text style="margin-left:180rpx;" decode="{{true}}" space="{{true}}">{{item.storeInfo.time}}分钟&nbsp;&nbsp;{{item.storeInfo.distance}}km</text>
                 </view>
                 <view id="commentInfo">
-                  <text> “鱼粉量很多，好吃”</text>
+                  <text> “{{item.storeInfo.comment}}”</text>
                 </view>
                 <view class="fontcss" id="favourableInfo">
                   <!-- <view>45减34</view> <view>90减69</view> <view>135减101</view> -->

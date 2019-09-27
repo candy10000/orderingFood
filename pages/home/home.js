@@ -1,4 +1,7 @@
 // pages/fooder/fooder.js
+var app = getApp()
+var API = require('../../utils/api.js')
+
 Page({
 
   /**
@@ -32,29 +35,45 @@ Page({
       }
     });
 
-    // bottom轮播图片
-    var data = {
-      "datas": [
-        {
-          "id": 1,
-          "imgurl": "../icon/taocan.gif"
-        },
-        {
-          "id": 2,
-          "imgurl": "../icon/taocan.gif"
-        },
-        {
-          "id": 3,
-          "imgurl": "../icon/taocan.gif"
-        },
-        {
-          "id": 4,
-          "imgurl": "../icon/taocan.gif"
-        }
-      ]
-    };
+    API.ajax('lunboData', function (res) {
+      //这里既可以获取模拟的res
+      console.log(res)
+      that.setData({
+        lunboData: res.data
+      })
+    });
+
+    API.ajax('stores', function (res) {
+      //这里既可以获取模拟的res
+      console.log(res)
+      that.setData({
+        stores: res.data
+      })
+    });
+
+    // // bottom轮播图片
+    // var data = {
+    //   "datas": [
+    //     {
+    //       "id": 1,
+    //       "imgurl": "../icon/taocan.gif"
+    //     },
+    //     {
+    //       "id": 2,
+    //       "imgurl": "../icon/taocan.gif"
+    //     },
+    //     {
+    //       "id": 3,
+    //       "imgurl": "../icon/taocan.gif"
+    //     },
+    //     {
+    //       "id": 4,
+    //       "imgurl": "../icon/taocan.gif"
+    //     }
+    //   ]
+    // };
     that.setData({
-      lunboData: data.datas
+      lunboData: this.data.lunboData
     })
   },
 

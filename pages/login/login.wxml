@@ -34,3 +34,4 @@
   <text bindtap="hideProtocol">×</text>
   </view>
 </view>
+
