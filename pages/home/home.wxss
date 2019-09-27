@@ -204,3 +204,22 @@ font-family: PingFangSC-regular;
     height: 210rpx;
   }
 }
+
+/* 定位样式 */
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 32rpx 48rpx;
+}
+
+.icon-dingwei {
+  font-size: 50rpx;
+  color: skyblue;
+}
+
+.fontweight {
+  color: #292929;
+  font-weight: bold;
+  font-size: 36rpx;
+}
