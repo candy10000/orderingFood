@@ -14,6 +14,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 48rpx;
+  margin-top: 32rpx;
 }
 
 .userinfo-avatar {

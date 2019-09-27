@@ -55,8 +55,11 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    wx.switchTab({
+      url: '../home/home',
+    })
   },
-  
+
   onReady: function () {
     // wx.request({
     //   url: `${config.api + '/getSessionId.html'}`,
