@@ -10,14 +10,25 @@ Page({
   data: {
     winWidth: 0,
     winHeight: 0,
-    stores: [1,2,3,5,6,7,8,9], 
+    stores: [], 
+    loadStores: [],
     scrollTop:5,//设置触发条件的距离
     // timer: null,//保存定时器
     
     //bottom轮播图配置
     autoplay: true,
     interval: 3000,
-    duration: 1200
+    duration: 1200,
+
+       // 综合排序下拉框参数设置
+    select: false,
+    filter_name: '综合排序',
+    filterFactor: [
+      '综合排序',
+      '好评优先',
+      '配送最快',
+      '通用排序',
+    ]
 
   },
 
@@ -48,8 +59,15 @@ Page({
     API.ajax('stores', function (res) {
       //这里既可以获取模拟的res
       console.log(res)
+      var loadStores = []
+
+      for(var i=0;i<10;i++){
+        loadStores.push(res.data[i])
+      }
+       console.log(loadStores)
       that.setData({
-        stores: res.data
+        stores: res.data,
+        loadStores: loadStores
       })
     });
 
@@ -81,14 +99,28 @@ Page({
 
   /* 商家展示 */
   lower() {
-    let len = this.data.stores.length,
-      lastItem = this.data.stores[len - 1];
-    for (let i = 0; i < len; i++) {
-      this.data.stores.push(lastItem + i + 1)
-      this.setData({
-        'stores': this.data.stores
-      })
+    let len = this.data.loadStores.length
+   
+    if(len == this.data.stores.length){
+      wx.showLoading({
+        title: '到底了。。',
+      });
+
+      setTimeout(function () { 
+        wx.hideLoading()},1000)
+    }else{
+      for (let i = 0; i < 10; i++) {
+        this.data.loadStores.push(this.data.stores[len+i])
+        this.setData({
+          'loadStores': this.data.loadStores
+        })
+      }
     }
+
+
+    
+  
+   
   },
   onPullDownRefresh:function(){
     wx.showNavigationBarLoading() //在标题栏中显示加载
@@ -99,9 +131,13 @@ Page({
     }, 1500);
   },
 
-  choose: function(){
+  choose: function(e){
+    console.log('id', e.currentTarget.dataset.id)
+    var id = e.currentTarget.dataset.id-1;
+    var jsonstr = JSON.stringify(this.data.loadStores[id])
+    console.log('jsonstr', jsonstr)
     wx.navigateTo({
-      url: '../storeDetail/storeDetail',
+      url: '../storeDetail/storeDetail?store='+jsonstr,
     })
   },
 
@@ -127,5 +163,45 @@ Page({
   //     }, 350)
   //   }
   // }
+
+  /**
+ *  综合排序点击下拉框
+ */
+  bindShowMsg() {
+    this.setData({
+      select: !this.data.select
+    })
+  },
+  /**
+   * 综合排序已选下拉框
+   */
+  mySelect(e) {
+    console.log(e)
+    var name = e.currentTarget.dataset.name
+    this.setData({
+      filter_name: name,
+      select: false
+    })
+  },
+
+  /* 搜索框实现 */
+  searchInput(e){
+    console.log('storeName', e.detail.value)
+      this.setData({
+        storeName: e.detail.value
+      })
+  },
+  search(){
+    var that = this;
+    var newStores = that.data.stores.filter((item)=>{
+      
+      var reg = new RegExp(that.data.storeName,'i')
+      return reg.test(item.storeInfo.name)
+    })
+    that.setData({
+         loadStores: newStores
+    })
+    
+  }
 
 })

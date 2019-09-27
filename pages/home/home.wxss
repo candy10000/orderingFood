@@ -167,3 +167,40 @@ font-family: PingFangSC-regular;
   margin-top: 20rpx;
   margin-right: 10rpx;
 }
+
+/* 
+  filterBar的综合排序下拉实现
+ */
+/* 下拉内容 */
+.select_box {
+
+  background-color: #fff;
+  padding: 0 20rpx;
+  width: 100%;
+  float:left;
+  position: relative;
+  right: 0;
+  z-index: 1;
+  overflow: hidden;
+  text-align: left;
+  animation: myfirst 0.5s;
+  font-size: 30rpx;
+}
+.select_one {
+  padding-left: 20rpx;
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+}
+/* 下拉过度效果 */
+@keyframes myfirst {
+  from {
+    height: 0rpx;
+  }
+  
+  to {
+    height: 210rpx;
+  }
+}

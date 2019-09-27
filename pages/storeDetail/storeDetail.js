@@ -31,13 +31,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-
+   
+    // console.log("option",options.store)
     //星星评分
     var praiseNums = 4;//获取数据评分
     var praisestars = (praiseNums / 5) * 100 + '%';
     console.log(praisestars);
     that.setData({
-      praisestars: praisestars
+      praisestars: praisestars,
+      store: JSON.parse(options.store) 
     })
     /**
      * 获取系统信息

@@ -1,7 +1,7 @@
 <view class="section">
   <view class="container">
     <view class="searchItem" >
-      <input class="searchText" placeholder="搜索"  bindinput="search" placeholder-style="color:#e2e2e2;" />
+      <input class="searchText" placeholder="搜索"  name="storeName" bindinput="searchInput" placeholder-style="color:#e2e2e2;" />
       <button class="searchBtn"  bindtap="search">
       <image src="../icon/search.png" class="searchIcon"></image>
       </button>
@@ -22,8 +22,12 @@
 
   <view id="filterBar">
     <ul>
-      <li> 综合排序
-        <icon class="iconfont icon-icon_sanjiaoxing"></icon>
+      <li> 
+       <view class='top-selected'  bindtap='bindShowMsg'>
+          {{filter_name}}
+          <icon wx:if="{{select}}" class="iconfont icon-shangsanjiaoxing"></icon>
+          <icon wx:else class="iconfont icon-xiasanjiaoxing"></icon>
+        </view>
 
       </li>
       <li>距离最近</li>
@@ -32,20 +36,26 @@
         <icon class="iconfont icon-iconfontzhizuobiaozhun023125"></icon>
       </li>
     </ul>
+         <!-- 下拉需要显示的列表 -->
+        <view class="select_box" wx:if="{{select}}">
+          <view wx:for="{{filterFactor}}" wx:key="unique">
+            <view class="select_one" bindtap="mySelect" data-name="{{item}}">{{item}}          </view>
+          </view>
+        </view>
   </view>
 
   <scroll-view scroll-y='true' style="height:{{winHeight}}px" bindscrolltolower='lower'>
     <ul>
-      <view wx:for="{{stores}}" data-id="{{index}}" wx:key="{{index}}">
+      <view wx:for="{{loadStores}}" data-id="{{index}}" wx:key="{{index}}">
         <block>
-          <li bindtap="choose">
+          <li bindtap="choose" data-id="{{item.id}}" >
             <view class="storeInfo">
               <view id="left">
                 <image src='{{item.storeInfo.image}}'></image>
               </view>
               <view id="right">
                 <h1>{{item.storeInfo.name}}</h1>
-
+              
                 <view id="saleInfo" class="fontcss">
                   <icon class="iconfont icon-xingxing" style="color:red; "></icon>
                   <span style="color:red">{{item.storeInfo.grade}}</span>

@@ -3,14 +3,14 @@
 
   <view class="top_storeMsg">
     <view>
-      <image src="../icon/store.jpg"> </image>
+      <image src="{{store.storeInfo.image}}"> </image>
     </view>
 
     <view id="store_title">
-      <text>爽爽小吃(石锅拌饭)</text>
+      <text>{{store.storeInfo.name}}</text>
     </view>
     <view id="delivery_msg">
-      <text>评价4.4月售1622单 蜂鸟专送约30分钟</text>
+      <text>评价{{store.storeInfo.grade}}月售1622单 蜂鸟专送约30分钟</text>
     </view>
 
     <!-- <view id="vip">
