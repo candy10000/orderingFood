@@ -1,15 +1,18 @@
 {
   "pages": [
-   "pages/login/login",
+    "pages/login/login",
     "pages/mine/mine",
     "pages/home/home",
     "pages/discovery/discovery",
-    "pages/order/order"
+    "pages/order/order",
+      "pages/storeDetail/storeDetail"
+    
   ],
   "window": {
+    "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#34cee5",
+    "navigationBarTitleText": "饿了么",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

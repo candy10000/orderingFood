@@ -86,7 +86,7 @@
 /*bottom 轮播控件*/
 
 .container{
-
+ margin-top: 20rpx;
 }
 
 .container .home-swiper {

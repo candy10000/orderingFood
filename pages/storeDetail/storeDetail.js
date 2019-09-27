@@ -17,6 +17,11 @@ Page({
       name: '商家',
       typeId: '3'
     }],
+    filterflag:[false,false,false],
+
+    // 评论轮播图
+    users: [1, 2, 3, 5, 6, 7, 8, 9],
+    scrollTop: 5,//设置触发条件的距离
    
   },
 
@@ -26,6 +31,14 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+
+    //星星评分
+    var praiseNums = 4;//获取数据评分
+    var praisestars = (praiseNums / 5) * 100 + '%';
+    console.log(praisestars);
+    that.setData({
+      praisestars: praisestars
+    })
     /**
      * 获取系统信息
      */
@@ -113,7 +126,7 @@ Page({
   },
 
   /**
-   * 点击某个小卡片跳转到相应摄影师的个人作品集 "pages/works/works" 
+   * 点击商家，跳入商家详细页面
    */
   choose: function (e) {
     var id = e.currentTarget.dataset.id;
@@ -123,5 +136,27 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-  }
+  },
+  //  标签过滤器
+  changefilterflag:function(e){
+     console.log("hhh",e.target.dataset.id)
+    var id = "filterflag[" + e.target.dataset.id+"]"
+    this.setData({
+      filterflag: [false, false, false]
+    })
+     this.setData({
+       [id]: true
+     })
+  },
+  // 下拉刷新
+  lower() {
+    let len = this.data.users.length,
+      lastItem = this.data.users[len - 1];
+    for (let i = 0; i < len; i++) {
+      this.data.users.push(lastItem + i + 1)
+      this.setData({
+        'users': this.data.users
+      })
+    }
+  },
 })
