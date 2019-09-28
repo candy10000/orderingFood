@@ -12,9 +12,9 @@
   "window": {
     "enablePullDownRefresh": true,
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#34cee5",
-    "navigationBarTitleText": "饿了么",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#3EA7F3",
+    "navigationBarTitleText": "小甜甜外卖平台",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

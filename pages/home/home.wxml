@@ -12,16 +12,21 @@
         <image src="../icon/search.png" class="searchIcon"></image>
       </button>
     </view>
-    <!--轮播图-->
-    <swiper class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    
+    
+
+  <scroll-view scroll-y='true' style="height:{{winHeight}}px" bindscrolltolower='lower'>
+  
+  <!--轮播图-->
+    <swiper wx:if="{{isNotSearch}}" class="home-swiper" indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <block wx:for-items="{{lunboData}}">
         <swiper-item>
           <image src="{{'../../image/banner/'+item.id+'.jpg'}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
-  </view>
-  <view class="section__title">
+  
+  <view wx:if="{{isNotSearch}}" class="section__title">
     <!-- <icon class="iconfont icon-renzhengshangjia" style="font-size:30px;"></icon> -->
     <text>推荐商家</text>
   </view>
@@ -49,8 +54,6 @@
       </view>
     </view>
   </view>
-
-  <scroll-view scroll-y='true' style="height:{{winHeight}}px" bindscrolltolower='lower'>
     <ul>
       <view wx:for="{{loadStores}}" data-id="{{index}}" wx:key="{{index}}">
         <block>
@@ -87,4 +90,5 @@
       </view>
     </ul>
   </scroll-view>
+  </view>
 </view>

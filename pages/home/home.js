@@ -39,6 +39,9 @@ Page({
     //定位数据
     address: '',
     items: [],
+
+    //搜索状态
+    isNotSearch:1
   },
 
   /**
@@ -200,7 +203,7 @@ Page({
   searchInput(e) {
     console.log('storeName', e.detail.value)
     this.setData({
-      storeName: e.detail.value
+      storeName: e.detail.value,
     })
   },
   search() {
@@ -211,9 +214,14 @@ Page({
       return reg.test(item.storeInfo.name)
     })
     that.setData({
-      loadStores: newStores
+      loadStores: newStores,
+      isNotSearch: 0
     })
-
+    if (!that.data.storeName){
+      that.setData({
+        isNotSearch: 1
+      })
+    }
   },
   //定位
   onChangeAddress() {

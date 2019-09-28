@@ -126,7 +126,7 @@ font-family: PingFangSC-regular;
    height: 100%;
 }
 
-
+/* 搜索框 */
 .searchItem {
   display: flex;
   flex-direction: row;
@@ -149,7 +149,7 @@ font-family: PingFangSC-regular;
  height: 80rpx;
 } 
 
-/*按钮*/
+/*搜索按钮*/
 .searchBtn::after{
  border:0px;
 }
@@ -193,6 +193,7 @@ font-family: PingFangSC-regular;
   position: relative;
   line-height: 60rpx;
   border-bottom: 1px solid #ccc;
+  color: #aaa;
 }
 /* 下拉过度效果 */
 @keyframes myfirst {
