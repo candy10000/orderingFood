@@ -138,7 +138,25 @@ Page({
 
   },
   onPullDownRefresh: function() {
+    var that = this;
     wx.showNavigationBarLoading() //在标题栏中显示加载
+
+    API.ajax('stores', function (res) {
+      //这里既可以获取模拟的res
+      console.log(res)
+      var loadStores = []
+
+      for (var i = 0; i < 10; i++) {
+        loadStores.push(res.data[i])
+      }
+      console.log(loadStores)
+      that.setData({
+        stores: res.data,
+        loadStores: loadStores
+      })
+    });
+
+
     setTimeout(function() {
       // complete
       wx.hideNavigationBarLoading() //完成停止加载
